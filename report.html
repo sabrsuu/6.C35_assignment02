@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Vis & Society Assignment 2</title>
+    <link
+      rel="stylesheet"
+      href="https://vis-society.github.io/assignments/report.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <h1>
+        <small>Assignment 2</small>
+        Exploratory Data Analysis
+      </h1>
+
+      <p><strong>Sabrina Su</strong> — <em>ssu02@mit.edu</em></p>
+    </header>
+    <main>
+      <section>
+        <h2>Subtheme: Housing for the Rich</h2>
+
+        <h3>Overall Analysis Questions</h3>
+        <ol>
+          <li>
+            How many affordable housing units were built compared to the number
+            of luxury condos?
+          </li>
+          <li>What is the price of properties with respect to location?</li>
+          <li>How have property prices changed over time?</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Discoveries & Insights</h2>
+        Following my initial questions, I detail my explorations below. Note
+        that I use property type and usage type interchangeably.
+        <figure>
+          <img src="images/median_price_by_loc.png" alt="" width="700px" />
+          <figcaption>
+            The median prices of properties by type and location, including
+            general ofice space and condominiums.
+          </figcaption>
+        </figure>
+        I first explored the prices of all properties within Boston, from
+        residential to general office space. The concentration of condominium
+        housing along the Newbury Street and Beacon Street area matches
+        expectations of expensive housing in Back Bay like the brownstones. The
+        concentration of general office spaces in the Financial Districts is
+        also expected.
+        <figure>
+          <img
+            src="images/sum_median_price_by_properties_type.png"
+            alt=""
+            width="400px"
+          />
+          <figcaption>
+            The sum of median prices of each property in Boston by type. Each
+            color represents an individual unit or property.
+          </figcaption>
+        </figure>
+        Condominiums and general office space seem to dominate the value of
+        properties in Boston. But since there are many types of properties
+        unrelated to residential types, I filtered them out for the following
+        visualizations and only included #-family homes, condominiums, and
+        subsidized housing (as well as merged similar usages: ex. CONDOMINIUM
+        and CONDO BLDG).
+        <figure>
+          <img
+            src="images/avg_price_housing_by_type_loc.png"
+            alt=""
+            width="700px"
+          />
+          <figcaption>
+            The average annual value of each residential housing property in
+            Boston.
+          </figcaption>
+        </figure>
+        In this visualization, I explored the average annual value of each
+        property related to residential housing (family homes, condominiums,
+        apartments, and subsidized housing) in Boston. Condominiums dominate the
+        the value percentage of the housing, as discussed in the "Towers of
+        Wealth" article. While anaylzing the relevant data, I found that each
+        address, particularly those for apartments and condominiums, listed the
+        units separately and by number. Furthermore, there existed some
+        duplicates. Therefore, I took the median of the price for each property
+        to get a reflection of the price for a unit at a given address and
+        removed duplicates. However, I wondered how different types of
+        residential housing compared in terms of lot size.
+
+        <figure>
+          <img src="images/lot_size_by_prop.png" alt="" width="700px" />
+          <figcaption>Average lot size of housing in Boston.</figcaption>
+        </figure>
+
+        Here, condominiums (yellow) dominate in terms of lot size, which aligns
+        with expectations from the article readings and this report
+        (https://www.bostonplans.org/getattachment/62f2b1bf-c8b3-434b-89e4-ea8f5c8508b4#:~:text=Apartment%20buildings%20account%20for%209,of%20residential%20land%20in%20Boston.)
+
+        <figure>
+          <img src="images/avg_price_over_time.png" alt="" width="400px" />
+          <figcaption>Average price of condominiums over time.</figcaption>
+        </figure>
+        In the above visualization, we can see that the average price of condos
+        has increased dramatically over time. However, what is the number of
+        properties built by type and what are the trends with respect to time of
+        how many buildings of each residential type were built?
+        <figure>
+          <img src="images/num_props.png" alt="" width="400px" />
+          <figcaption>Number of buildings built by usage type.</figcaption>
+        </figure>
+        I noticed that condominiums consist of the most number of buildings
+        within Boston, along with single-family homes and general offices.
+        <figure>
+          <img src="images/num_props_time_nulls.png" alt="" width="700px" />
+          <img src="images/num_props_time.png" alt="" width="700px" />
+          <figcaption>
+            Year built of residential buildings in Boston. Graph on top includes
+            removed data for comparison.
+          </figcaption>
+        </figure>
+        When I analyzed the data for year in which each residential property was
+        built in Boston, there were properties that were built in year 0 or
+        null. I removed those data points and updated my previous visualization
+        to maintain consistency. The general trend seems to be the increasing
+        construction of condominiums within Boston compared to other housing
+        types, particularly starting in 1920.
+        <figure>
+          <img src="images/mortgage.png" alt="" width="200px" />
+          <figcaption>
+            Average mortgage price for single, double, and triple family homes.
+          </figcaption>
+        </figure>
+        When analyzing the mortgages of family homes, single-family homes have
+        the highest range and a larger median mortgage. Note that I did remove
+        data points with mortgages of 0. However, who is investing in all these
+        properties?
+        <figure>
+          <img
+            src="images/num_cash_sales_investor_type.png"
+            alt=""
+            width="400px"
+          />
+          <figcaption>
+            Average number of cash sales per investor by usage type.
+          </figcaption>
+        </figure>
+        I notice that institutional investors and investors are able to, on
+        average, purchase more cash sales than non-investors. This is likely due
+        to the fact that investors have an advantage in the housing market.
+        <figure>
+          <img src="images/investor_types_loc.png" alt="" width="700px" />
+          <figcaption>
+            Investor types by location and average price in Boston.
+          </figcaption>
+        </figure>
+      </section>
+      Similarly to the above. Investors dominate most of the cash sale purchases
+      in Boston, particularly institutional, large, and small investors.
+      <section>
+        <h2>Summary</h2>
+
+        <p>
+          Condominiums have been on the rise in construction and the recent
+          housing market and take a majority share in the value. Property prices have expectedly increased over time. Investors are
+          also more likely than non-investors to make cash sale purchases.
+          Housing such as condos and more expensive homes are located primarily
+          in the Back Bay area compared to the rest of the Boston neighborhoods.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
